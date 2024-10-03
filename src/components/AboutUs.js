@@ -87,16 +87,5 @@ const Description = styled.div`
   }
 `;
 
-const Image = styled.div`
-  flex: 1;
-
-  img {
-    width: 150px; /* Fixed width */
-    height: 150px; /* Fixed height to maintain the circle */
-    border-radius: 50%; /* Round image */
-    object-fit: cover; /* Cover to maintain aspect ratio */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
-  }
-`;
 
 export default AboutUs;
