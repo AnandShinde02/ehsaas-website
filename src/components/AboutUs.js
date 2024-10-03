@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import SVGBackground from './SVGBackground'; // Import the SVG background
 import Lottie from 'lottie-react';
-import animationData from '/Animation1.json'; // Path to your Lottie animation file
 
 const AboutUs = () => {
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    const fetchAnimationData = async () => {
+      const response = await fetch('/Animation1.json'); // Fetch from public folder
+      const data = await response.json();
+      setAnimationData(data);
+    };
+
+    fetchAnimationData();
+  }, []);
+
   return (
     <AboutUsContainer id="about">
       <SVGBackground /> {/* Add the animated SVG background */}
@@ -23,7 +34,7 @@ const AboutUs = () => {
             aim to provide them with a future full of hope and opportunity.
           </p>
         </Description>
-        <Lottie animationData={animationData} loop={true} style={{ width: '200px', height: '200px' }} /> {/* Lottie animation */}
+        {animationData && <Lottie animationData={animationData} loop={true} style={{ width: '200px', height: '200px' }} />} {/* Lottie animation */}
       </Content>
       <Image>
         <img src="/about-image.jpg" alt="Ehsaas about us" />
