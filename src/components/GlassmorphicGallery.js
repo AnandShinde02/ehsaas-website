@@ -14,6 +14,14 @@ const GlassmorphicGallery = () => {
   return (
     <GallerySection id="gallery">
       <GalleryHeading>Our Gallery</GalleryHeading>
+      <GalleryDescription>
+        <p>
+          Welcome to our gallery! Here you can explore some wonderful moments
+          captured at Ehsaas. Each image tells a story of our intellectually
+          challenged children and the love, care, and support they receive in
+          our nurturing environment.
+        </p>
+      </GalleryDescription>
       <GalleryGrid>
         {galleryImages.map((image, index) => (
           <ImageContainer key={index}>
@@ -42,9 +50,21 @@ const GallerySection = styled.section`
 const GalleryHeading = styled.h2`
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: #ffffff; /* White text for better contrast */
   font-family: 'Georgia', serif;
+`;
+
+const GalleryDescription = styled.div`
+  text-align: center;
+  margin-bottom: 40px;
+  
+  p {
+    font-size: 1.2rem;
+    color: #ffffff; /* White text for better contrast */
+    max-width: 800px;
+    margin: 0 auto; /* Center the text */
+  }
 `;
 
 const GalleryGrid = styled.div`
@@ -66,7 +86,7 @@ const ImageContainer = styled.div`
 
   img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover; /* Maintain aspect ratio */
     transition: transform 0.3s; /* Smooth transition for zoom effect */
 
