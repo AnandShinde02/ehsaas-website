@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Lottie from 'lottie-react'; // Import Lottie for animation
-import animationData from 'animations/animation1.json'; // Import your Lottie animation file
+import animationData from '/animations/animation1.json'; // Import your Lottie animation file
 
 const AboutUs = () => {
   return (
