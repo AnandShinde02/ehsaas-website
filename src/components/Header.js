@@ -34,7 +34,7 @@ const Logo = styled.div`
 
   img {
     width: 160px;
-    height: 80px;
+    height: 60px;
     margin-right: 10px;
   }
 
