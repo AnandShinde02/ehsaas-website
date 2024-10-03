@@ -33,8 +33,11 @@ const VisionMission = () => {
 // Styled Components
 const VisionMissionSection = styled.section`
   padding: 60px 100px;
-  background-color: #fff;
-  text-align: center;
+  background: linear-gradient(135deg, #A7C7E7, #E3D5F1); /* Gradient Background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
+  margin: 20px; /* Margin around the section */
+  text-align: center; /* Center text for a modern look */
 
   @media (max-width: 768px) {
     padding: 40px 20px;
@@ -64,6 +67,10 @@ const ContentBlock = styled.div`
   font-family: 'Arial', sans-serif;
   color: #555;
   line-height: 1.8;
+  background: #fff; /* White background for content blocks */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding for inner content */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 
   p {
     font-size: 1.2rem;
