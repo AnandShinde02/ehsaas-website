@@ -21,7 +21,7 @@ const Footer = () => {
         </LinksSection>
         <ContactSection>
           <h3>Contact Us</h3>
-          <p>123 Ehsaas Street, Satara, Maharashtra</p>
+          <p>near B.P Petrol Pump, Valase, Maharashtra 415519</p>
           <p>Email: info@ehsaas.org</p>
           <p>Phone: +91 1234567890</p>
           <SocialIcons>
