@@ -44,30 +44,4 @@ const GalleryHeading = styled.h2`
 `;
 
 const GalleryGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-`;
-
-const ImageContainer = styled.div`
-  width: 100%;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.05);  /* Zoom-in effect on hover */
-    }
-  }
-`;
-
-export default Gallery;
+ 
