@@ -2,10 +2,10 @@ import React from 'react';
 import Header from './components/Header';
 import HeroCarousel from './components/HeroCarousel';
 import AboutUs from './components/AboutUs';
-import Gallery from './components/Gallery';
+import GlassmorphicGallery from './components/GlassmorphicGallery'; // Importing the new gallery
 import VisionMission from './components/VisionMission';
-import Contact from './components/Contact';  // Importing the new Contact Section
-import Footer from './components/Footer';    // Importing Footer
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -13,10 +13,10 @@ function App() {
       <Header />
       <HeroCarousel />
       <AboutUs />
-      <Gallery />
+      <GlassmorphicGallery />  {/* Use the new Glassmorphic Gallery here */}
       <VisionMission />
-      <Contact />  {/* Adding Contact Section with Google Map */}
-      <Footer />   {/* Adding Footer */}
+      <Contact />
+      <Footer />
     </div>
   );
 }
