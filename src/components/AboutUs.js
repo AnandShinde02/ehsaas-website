@@ -48,7 +48,7 @@ const AboutUsContainer = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 60px 100px;
+  padding: 60px 80px;
   position: relative;
   margin: 20px;
   overflow: hidden; /* Ensure animations don't overflow */
@@ -91,8 +91,8 @@ const Image = styled.div`
   flex: 1;
 
   img {
-    width: 150px; /* Fixed width */
-    height: 150px; /* Fixed height to maintain the circle */
+    width: 50px; /* Fixed width */
+    height: 50px; /* Fixed height to maintain the circle */
     border-radius: 50%; /* Round image */
     object-fit: cover; /* Cover to maintain aspect ratio */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
