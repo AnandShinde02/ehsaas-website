@@ -3,7 +3,8 @@ import Header from './components/Header';
 import HeroCarousel from './components/HeroCarousel';
 import AboutUs from './components/AboutUs';
 import Gallery from './components/Gallery';
-import VisionMission from './components/VisionMission';  // Importing Vision & Mission
+import VisionMission from './components/VisionMission';
+import Footer from './components/Footer';  // Importing Footer
 
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
       <HeroCarousel />
       <AboutUs />
       <Gallery />
-      <VisionMission />  {/* Adding Vision & Mission Section */}
-      {/* Other components like Footer */}
+      <VisionMission />
+      <Footer />  {/* Adding Footer Section */}
     </div>
   );
 }
