@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const HeroCarousel = () => {
-  // Settings for the carousel
   const settings = {
     dots: true,
     infinite: true,
@@ -13,14 +12,13 @@ const HeroCarousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 6000,  // Change slide every 6 seconds
+    autoplaySpeed: 6000,
     arrows: false
   };
 
   return (
     <CarouselContainer>
       <Slider {...settings}>
-        {/* Slide 1 */}
         <Slide>
           <VideoContainer>
             <video src="/video1.mp4" autoPlay loop muted></video>
@@ -34,8 +32,7 @@ const HeroCarousel = () => {
             </CTAContainer>
           </SlideContent>
         </Slide>
-        
-        {/* Slide 2 */}
+
         <Slide>
           <VideoContainer>
             <video src="/video2.mp4" autoPlay loop muted></video>
@@ -49,32 +46,17 @@ const HeroCarousel = () => {
             </CTAContainer>
           </SlideContent>
         </Slide>
-        {/* Slide 3 */}
-        <Slide>
-          <VideoContainer>
-            <video src="/video3.mp4" autoPlay loop muted></video>
-          </VideoContainer>
-          <SlideContent>
-            <HeroHeading>Change Their Future</HeroHeading>
-            <HeroSubheading>Your small contribution can make a big difference.</HeroSubheading>
-            <CTAContainer>
-              <CTAButton href="#about">Learn More</CTAButton>
-              <DonateButton href="#donate">Donate Now</DonateButton>
-            </CTAContainer>
-          </SlideContent>
-        </Slide>
-
-        {/* Add more slides as needed */}
       </Slider>
     </CarouselContainer>
   );
 };
 
 // Styled Components
-const CarouselContainer = styled.div`
+const CarouselContainer = styled.section`
   position: relative;
   width: 100%;
-  height: 90vh; /* Adjust height as per your need */
+  height: 90vh;
+  overflow: hidden;  /* To prevent overflow of video */
 `;
 
 const Slide = styled.div`
@@ -84,6 +66,7 @@ const Slide = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);  /* 3D effect with shadow */
 `;
 
 const VideoContainer = styled.div`
@@ -102,19 +85,20 @@ const SlideContent = styled.div`
   color: #FFFFFF;
   text-align: center;
   z-index: 1;
-  padding: 0 20px;
 `;
 
 const HeroHeading = styled.h1`
   font-size: 3.5rem;
   margin-bottom: 20px;
   font-family: 'Georgia', serif;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);  /* Text shadow for depth */
 `;
 
 const HeroSubheading = styled.p`
   font-size: 1.5rem;
   margin-bottom: 30px;
   font-family: 'Arial', sans-serif;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);  /* Text shadow for depth */
 `;
 
 const CTAContainer = styled.div`
@@ -126,22 +110,19 @@ const CTAContainer = styled.div`
 const CTAButton = styled.a`
   text-decoration: none;
   padding: 12px 30px;
-  background-color: #F59E4C;  /* Soft Orange */
+  background: linear-gradient(90deg, #F59E4C, #E37C32); /* Gradient for button */
   color: white;
-  border-radius: 5px;
+  border-radius: 25px; /* Rounded corners */
   font-size: 18px;
-  font-family: 'Arial', sans-serif;
+  transition: transform 0.3s;
 
   &:hover {
-    background-color: #E37C32;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
   }
 `;
 
 const DonateButton = styled(CTAButton)`
-  background-color: #F44336;  /* Bright Red for Donate */
-  &:hover {
-    background-color: #D32F2F;  /* Darker Red on Hover */
-  }
+  background: linear-gradient(90deg, #F44336, #D32F2F); /* Gradient for donate button */
 `;
 
 export default HeroCarousel;
