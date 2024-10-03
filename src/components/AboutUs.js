@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Lottie from 'lottie-react'; // Import Lottie for animation
+import animationData from './animations/animation1.json'; // Import your Lottie animation file
 
 const AboutUs = () => {
   return (
@@ -20,6 +22,12 @@ const AboutUs = () => {
           </p>
         </Description>
       </Content>
+
+      {/* Lottie Animation */}
+      <AnimationWrapper>
+        <Lottie animationData={animationData} loop={true} style={{ width: '100%', height: '100%' }} />
+      </AnimationWrapper>
+
       <Image>
         <img src="/about-image.jpg" alt="Ehsaas about us" />
       </Image>
@@ -68,6 +76,17 @@ const Description = styled.div`
 
   p {
     margin-bottom: 20px;
+  }
+`;
+
+const AnimationWrapper = styled.div`
+  flex: 1;
+  max-width: 300px; /* Optional: Set a max width for the animation */
+  margin: 0 20px; /* Optional: Add margin around the animation */
+
+  @media (max-width: 768px) {
+    margin: 20px 0;
+    max-width: 100%; /* Make sure it adjusts on smaller screens */
   }
 `;
 
