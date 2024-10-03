@@ -36,9 +36,7 @@ const AboutUs = () => {
         </Description>
         {animationData && <Lottie animationData={animationData} loop={true} style={{ width: '1400px', height: '400px' }} />} {/* Lottie animation */}
       </Content>
-      <Image>
-        <img src="/logo192.png" alt="Ehsaas about us" />
-      </Image>
+      
     </AboutUsContainer>
   );
 };
