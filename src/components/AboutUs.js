@@ -33,14 +33,44 @@ const AboutUsContainer = styled.section`
   justify-content: space-between;
   align-items: center;
   padding: 60px 100px;
-  background: linear-gradient(135deg, #A7C7E7, #E3D5F1); /* Gradient Background */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
-  margin: 20px; /* Margin around the section */
+  background: linear-gradient(135deg, #A7C7E7, #E3D5F1);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin: 20px;
+  position: relative;
+  overflow: hidden; /* Ensure animations don't overflow */
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent overlay */
+    backdrop-filter: blur(10px);
+    z-index: 1;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 40px 20px;
+  }
+
+  /* Animated Background */
+  &:hover {
+    animation: pulse 4s infinite alternate; /* Animation on hover */
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      background: linear-gradient(135deg, #A7C7E7, #E3D5F1);
+    }
+    100% {
+      transform: scale(1.02);
+      background: linear-gradient(135deg, #E3D5F1, #A7C7E7);
+    }
   }
 `;
 
@@ -58,6 +88,8 @@ const Heading = styled.h2`
   margin-bottom: 20px;
   color: #333;
   font-family: 'Georgia', serif;
+  position: relative;
+  z-index: 2; /* Ensure text is above the background */
 `;
 
 const Description = styled.div`
@@ -65,6 +97,8 @@ const Description = styled.div`
   color: #555;
   font-family: 'Arial', sans-serif;
   line-height: 1.8;
+  position: relative;
+  z-index: 2;
 
   p {
     margin-bottom: 20px;
@@ -75,9 +109,10 @@ const Image = styled.div`
   flex: 1;
 
   img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px; /* Rounded corners for image */
+    width: 200px; /* Fixed width */
+    height: 200px; /* Fixed height to maintain the circle */
+    border-radius: 50%; /* Round image */
+    object-fit: cover; /* Cover to maintain aspect ratio */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
   }
 `;
