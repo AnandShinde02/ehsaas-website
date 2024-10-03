@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Lottie from 'lottie-react'; // Import Lottie for animation
-import animationData from '/animations/Animation1.json'; // Import your Lottie animation file
+import Lottie from 'lottie-react';
+import animationData from '../animations/animation1.json'; // Path to your Lottie animation file
 
 const AboutUs = () => {
   return (
@@ -81,7 +81,7 @@ const Description = styled.div`
 
 const AnimationWrapper = styled.div`
   flex: 1;
-  max-width: 300px; /* Optional: Set a max width for the animation */
+  max-width: 300px; /* Set a max width for the animation */
   margin: 0 20px; /* Optional: Add margin around the animation */
 
   @media (max-width: 768px) {
