@@ -29,6 +29,8 @@ const Contact = () => {
 const ContactSection = styled.section`
   padding: 60px 100px;
   background-color: #f8f9fa;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,8 +64,8 @@ const MapContainer = styled.div`
   iframe {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Rounded corners for map */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for map */
   }
 `;
 
