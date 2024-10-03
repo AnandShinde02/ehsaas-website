@@ -34,10 +34,10 @@ const AboutUs = () => {
             aim to provide them with a future full of hope and opportunity.
           </p>
         </Description>
-        {animationData && <Lottie animationData={animationData} loop={true} style={{ width: '200px', height: '200px' }} />} {/* Lottie animation */}
+        {animationData && <Lottie animationData={animationData} loop={true} style={{ width: '1400px', height: '400px' }} />} {/* Lottie animation */}
       </Content>
       <Image>
-        <img src="/about-image.jpg" alt="Ehsaas about us" />
+        <img src="/logo192.png" alt="Ehsaas about us" />
       </Image>
     </AboutUsContainer>
   );
