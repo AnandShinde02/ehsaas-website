@@ -6,7 +6,7 @@ const Contact = () => {
     <ContactSection id="contact">
       <ContactInfo>
         <h2>Contact Us</h2>
-        <p>123 Ehsaas Street, Satara, Maharashtra</p>
+        <p>near B.P Petrol Pump, Valase, Maharashtra 415519</p>
         <p>Email: info@ehsaas.org</p>
         <p>Phone: +91 1234567890</p>
       </ContactInfo>
