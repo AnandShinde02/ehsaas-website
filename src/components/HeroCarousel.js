@@ -46,6 +46,21 @@ const HeroCarousel = () => {
             </CTAContainer>
           </SlideContent>
         </Slide>
+
+  <Slide>
+          <VideoContainer>
+            <video src="/video3.mp4" autoPlay loop muted></video>
+          </VideoContainer>
+          <SlideContent>
+            <HeroHeading>Support Special Children</HeroHeading>
+            <HeroSubheading>Help them grow and become a part of our community.</HeroSubheading>
+            <CTAContainer>
+              <CTAButton href="#about">Learn More</CTAButton>
+              <DonateButton href="#donate">Donate Now</DonateButton>
+            </CTAContainer>
+          </SlideContent>
+        </Slide>
+  
       </Slider>
     </CarouselContainer>
   );
