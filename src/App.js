@@ -4,7 +4,8 @@ import HeroCarousel from './components/HeroCarousel';
 import AboutUs from './components/AboutUs';
 import Gallery from './components/Gallery';
 import VisionMission from './components/VisionMission';
-import Footer from './components/Footer';  // Importing Footer
+import Contact from './components/Contact';  // Importing the new Contact Section
+import Footer from './components/Footer';    // Importing Footer
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       <AboutUs />
       <Gallery />
       <VisionMission />
-      <Footer />  {/* Adding Footer Section */}
+      <Contact />  {/* Adding Contact Section with Google Map */}
+      <Footer />   {/* Adding Footer */}
     </div>
   );
 }
