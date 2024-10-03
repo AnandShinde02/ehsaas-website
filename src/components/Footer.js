@@ -49,6 +49,7 @@ const FooterContainer = styled.footer`
   background-color: #333;
   color: white;
   padding: 40px 100px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
 
   @media (max-width: 768px) {
     padding: 30px 20px;
@@ -73,6 +74,7 @@ const LogoSection = styled.div`
   img {
     width: 80px;
     margin-bottom: 10px;
+    border-radius: 10px; /* Rounded corners for logo */
   }
 
   p {
