@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SVGBackground from './SVGBackground'; // Import the SVG background
 import Lottie from 'lottie-react';
-import animationData from './path_to_your_lottie_animation.json'; // Path to your Lottie animation file
+import animationData from '.animation/animation1.json'; // Path to your Lottie animation file
 
 const AboutUs = () => {
   return (
