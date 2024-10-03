@@ -25,23 +25,18 @@ const Footer = () => {
           <p>Email: info@ehsaas.org</p>
           <p>Phone: +91 1234567890</p>
           <SocialIcons>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <FaFacebookF />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              <FaTwitter />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <FaInstagram />
+            </a>
           </SocialIcons>
         </ContactSection>
       </FooterContent>
-      <MapContainer>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.7292263980285!2d74.020875074632!3d17.615588296192087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc23a847ef4749d%3A0x9654f2ad41797532!2sEhsaas%20Matimand%20Mulanche%20Balgruh!5e0!3m2!1sen!2sin!4v1727956197495!5m2!1sen!2sin"
-          width="100%"
-          height="450"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </MapContainer>
       <FooterBottom>
         <p>© 2024 EHSAAS. All Rights Reserved.</p>
       </FooterBottom>
@@ -137,19 +132,6 @@ const SocialIcons = styled.div`
     &:hover {
       color: #f59e4c;
     }
-  }
-`;
-
-const MapContainer = styled.div`
-  margin-top: 40px;
-  width: 100%;
-  height: 450px;
-  display: flex;
-  justify-content: center;
-
-  iframe {
-    width: 100%;
-    height: 100%;
   }
 `;
 
