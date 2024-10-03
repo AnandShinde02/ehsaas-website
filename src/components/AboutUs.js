@@ -33,8 +33,10 @@ const AboutUsContainer = styled.section`
   justify-content: space-between;
   align-items: center;
   padding: 60px 100px;
-  background-color: #f8f9fa;  /* Light background for contrast */
-  gap: 30px;
+  background: linear-gradient(135deg, #A7C7E7, #E3D5F1); /* Gradient Background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
+  margin: 20px; /* Margin around the section */
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -75,10 +77,9 @@ const Image = styled.div`
   img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Rounded corners for image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
   }
 `;
 
 export default AboutUs;
-
