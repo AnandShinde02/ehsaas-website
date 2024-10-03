@@ -51,7 +51,7 @@ const GalleryHeading = styled.h2`
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #ffffff; /* White text for better contrast */
+  color: #000000; /* White text for better contrast */
   font-family: 'Georgia', serif;
 `;
 
@@ -61,7 +61,7 @@ const GalleryDescription = styled.div`
   
   p {
     font-size: 1.2rem;
-    color: #ffffff; /* White text for better contrast */
+    color: #000000; /* White text for better contrast */
     max-width: 800px;
     margin: 0 auto; /* Center the text */
   }
