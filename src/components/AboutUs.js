@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import SVGBackground from './SVGBackground'; // Import the SVG background
 import Lottie from 'lottie-react';
-import animationData from '.animations/animation1.json'; // Path to your Lottie animation file
+import animationData from './path_to_your_lottie_animation.json'; // Path to your Lottie animation file
 
 const AboutUs = () => {
   return (
     <CardContainer>
-      <SVGBackground /> {/* Add the animated SVG background */}
       <AboutUsContainer id="about">
         <Content>
           <Heading>About Us</Heading>
@@ -44,7 +42,7 @@ const CardContainer = styled.div`
   padding: 40px;
   margin: 40px auto; /* Center the card */
   max-width: 1200px; /* Limit card width */
-  position: relative; /* To contain the background and content */
+  position: relative;
   overflow: hidden;
 
   @media (max-width: 768px) {
