@@ -2,7 +2,8 @@ import React from 'react';
 import Header from './components/Header';
 import HeroCarousel from './components/HeroCarousel';
 import AboutUs from './components/AboutUs';
-import Gallery from './components/Gallery';  // Importing the Gallery component
+import Gallery from './components/Gallery';
+import VisionMission from './components/VisionMission';  // Importing Vision & Mission
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Header />
       <HeroCarousel />
       <AboutUs />
-      <Gallery />  {/* Adding the Gallery Section */}
+      <Gallery />
+      <VisionMission />  {/* Adding Vision & Mission Section */}
       {/* Other components like Footer */}
     </div>
   );
