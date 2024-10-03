@@ -6,25 +6,25 @@ const Header = () => {
     <HeaderContainer>
       <Logo>
         <img src="/logo.png" alt="Ehsaas Logo" />
-        <h1>EHSAAS</h1>
+        <h1></h1>
       </Logo>
       <NavBar>
         <NavLink href="#about">About Us</NavLink>
         <NavLink href="#vision">Vision & Mission</NavLink>
         <NavLink href="#gallery">Gallery</NavLink>
-        <NavLink href="#donate">Donate</NavLink>
+        <DonateButton href="#donate">Donate</DonateButton>
       </NavBar>
     </HeaderContainer>
   );
 };
 
-// Styled Components
+// Styled Components with Color Scheme
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #f8f9fa;
+  padding: 15px 30px;
+  background-color: #A7C7E7;  /* Soft Blue Background */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
@@ -33,33 +33,49 @@ const Logo = styled.div`
   align-items: center;
 
   img {
-    width: 50px;
+    width: 160px;
     height: 50px;
     margin-right: 10px;
   }
 
   h1 {
     font-family: 'Georgia', serif;
-    color: #333;
+    color: #333333;  /* Dark Gray for Text */
     font-size: 24px;
   }
 `;
 
 const NavBar = styled.nav`
   display: flex;
+  align-items: center;
 `;
 
 const NavLink = styled.a`
   text-decoration: none;
-  color: #333;
-  margin: 0 15px;
+  color: #333333;  /* Dark Gray for Links */
+  margin: 0 20px;
   font-size: 18px;
   font-family: 'Arial', sans-serif;
+  padding: 10px;
 
   &:hover {
-    color: #007bff;
+    background-color: #F59E4C;  /* Soft Orange background on hover */
+    color: #FFFFFF;  /* White text for readability */
+    border-radius: 5px;  /* Add a slight border-radius for a softer feel */
+  }
+`;
+
+const DonateButton = styled.a`
+  text-decoration: none;
+  background-color: #F59E4C;  /* Soft Orange for Call to Action */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+
+  &:hover {
+    background-color: #E37C32;  /* Slightly darker orange on hover */
   }
 `;
 
 export default Header;
-
