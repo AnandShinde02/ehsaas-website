@@ -7,7 +7,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <LogoSection>
-          <img src="/logo.png" alt="Ehsaas Logo" />
+          <img src="/WhatsApp Image 2024-10-01 at 15.54.22_8e0fc06e.jpg" alt="Ehsaas Logo" />
           <p>EHSAAS - Empowering Intellectually Challenged Children</p>
         </LogoSection>
         <LinksSection>
@@ -38,7 +38,7 @@ const Footer = () => {
         </ContactSection>
       </FooterContent>
       <FooterBottom>
-        <p>© 2024 EHSAAS. All Rights Reserved.</p>
+        <p>Made With  By Badbunny and © 2024 EHSAAS. All Rights Reserved.</p>
       </FooterBottom>
     </FooterContainer>
   );
@@ -72,7 +72,7 @@ const LogoSection = styled.div`
   flex: 1;
 
   img {
-    width: 80px;
+    width: 300px;
     margin-bottom: 10px;
     border-radius: 10px; /* Rounded corners for logo */
   }

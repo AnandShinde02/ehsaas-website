@@ -8,6 +8,12 @@ const Gallery = () => {
     '/gallery3.jpg',
     '/gallery4.jpg',
     '/gallery5.jpg',
+    '/gallery6.jpg',
+    '/gallery7.jpg',
+    '/gallery8.jpg',
+    '/gallery12.jpg',
+    '/gallery10.jpg',
+    '/gallery11.jpg',
   ];
 
   return (

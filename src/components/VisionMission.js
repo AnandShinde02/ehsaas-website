@@ -6,22 +6,32 @@ import animationData from '../animations/Animation1.json'; // Path to your Lotti
 const VisionMission = () => {
   return (
     <VisionMissionContainer id="vision-mission">
-      {/* Lottie Animation as Background (Flipped Upside Down) */}
+      {/* Lottie Animation as Background */}
       <AnimationBackground>
         <Lottie animationData={animationData} loop={true} style={{ width: '100%', height: '100%', transform: 'rotate(180deg)' }} />
       </AnimationBackground>
 
-      <Content>
-        <Heading>Our Vision & Mission</Heading>
-        <Description>
-          <p>
-            At **EHSAAS**, our vision is to create a society where every child, regardless of their physical or intellectual challenges, has the opportunity to lead a meaningful life.
-          </p>
-          <p>
-            Our mission is to provide care, education, and support to underprivileged and intellectually challenged children, helping them realize their full potential and integrate into society as valued members.
-          </p>
-        </Description>
-      </Content>
+      <CardsContainer>
+        {/* Vision Card */}
+        <Card>
+          <CardHeading>Vision</CardHeading>
+          <CardContent>
+            <p>
+              At EHSAAS, our vision is to create a society where every child, regardless of their physical or intellectual challenges, has the opportunity to lead a meaningful life.
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Mission Card */}
+        <Card>
+          <CardHeading>Mission</CardHeading>
+          <CardContent>
+            <p>
+              Our mission is to provide care, education, and support to underprivileged and intellectually challenged children, helping them realize their full potential and integrate into society as valued members.
+            </p>
+          </CardContent>
+        </Card>
+      </CardsContainer>
     </VisionMissionContainer>
   );
 };
@@ -29,9 +39,6 @@ const VisionMission = () => {
 // Styled Components
 const VisionMissionContainer = styled.section`
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 60px 100px;
   background: linear-gradient(135deg, #E3D5F1, #A7C7E7); /* Gradient Background like AboutUs */
   border-radius: 10px; /* Rounded corners */
@@ -40,7 +47,6 @@ const VisionMissionContainer = styled.section`
   overflow: hidden; /* Ensure the background animation doesn't overflow */
 
   @media (max-width: 768px) {
-    flex-direction: column;
     padding: 40px 20px;
   }
 `;
@@ -55,29 +61,39 @@ const AnimationBackground = styled.div`
   opacity: 1; /* Adjust opacity to make the animation subtle */
 `;
 
-const Content = styled.div`
-  flex: 1;
+const CardsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
   position: relative; /* To layer content above the background animation */
   z-index: 1; /* Ensure content appears above the animation */
-  padding-right: 20px;
-  color: #333;
+  gap: 20px;
 
   @media (max-width: 768px) {
-    padding-right: 0;
+    flex-direction: column;
+    gap: 0;
   }
 `;
 
-const Heading = styled.h2`
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+const Card = styled.div`
+  flex: 1;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent for glass effect */
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(10px); /* Blurred background for glassmorphism effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
+  color: #333;
+`;
+
+const CardHeading = styled.h3`
+  font-size: 1.8rem;
+  margin-bottom: 15px;
   color: #333;
   font-family: 'Georgia', serif;
 `;
 
-const Description = styled.div`
+const CardContent = styled.div`
   font-size: 1.2rem;
   color: #555;
-  font-family: 'Arial', sans-serif;
   line-height: 1.8;
 
   p {
