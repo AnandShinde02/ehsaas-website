@@ -1,87 +1,88 @@
 import React from 'react';
 import styled from 'styled-components';
+import Lottie from 'lottie-react';
+import animationData from '../animations/Animation1.json'; // Path to your Lottie animation file for Vision & Mission
 
 const VisionMission = () => {
   return (
-    <VisionMissionSection id="vision">
-      <Heading>Our Vision & Mission</Heading>
-      <ContentContainer>
-        <ContentBlock>
-          <SubHeading>Our Vision</SubHeading>
-          <p>
-            At EHSAAS, our vision is to build a society where intellectually challenged children
-            are empowered to live independently, fully integrated into their communities. We aim
-            to provide these children with the tools and resources they need to grow and develop,
-            enabling them to reach their full potential.
-          </p>
-        </ContentBlock>
+    <VisionMissionContainer id="vision-mission">
+      {/* Lottie Animation as Background (Flipped Upside Down) */}
+      <AnimationBackground>
+        <Lottie animationData={animationData} loop={true} style={{ width: '100%', height: '100%', transform: 'rotate(180deg)' }} />
+      </AnimationBackground>
 
-        <ContentBlock>
-          <SubHeading>Our Mission</SubHeading>
+      <Content>
+        <Heading>Our Vision & Mission</Heading>
+        <Description>
           <p>
-            Our mission is to create a nurturing environment for intellectually challenged children
-            by offering free residential care, specialized education, and vocational training. By
-            equipping them with essential life skills and fostering their natural talents, we help
-            them lead fulfilling, independent lives while being active participants in society.
+            At **EHSAAS**, our vision is to create a society where every child, regardless of their physical or intellectual challenges, has the opportunity to lead a meaningful life.
           </p>
-        </ContentBlock>
-      </ContentContainer>
-    </VisionMissionSection>
+          <p>
+            Our mission is to provide care, education, and support to underprivileged and intellectually challenged children, helping them realize their full potential and integrate into society as valued members.
+          </p>
+        </Description>
+      </Content>
+    </VisionMissionContainer>
   );
 };
 
 // Styled Components
-const VisionMissionSection = styled.section`
+const VisionMissionContainer = styled.section`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 60px 100px;
-  background: linear-gradient(135deg, #A7C7E7, #E3D5F1); /* Gradient Background */
+  background: linear-gradient(135deg, #E3D5F1, #A7C7E7); /* Gradient Background like AboutUs */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
   margin: 20px; /* Margin around the section */
-  text-align: center; /* Center text for a modern look */
+  overflow: hidden; /* Ensure the background animation doesn't overflow */
 
   @media (max-width: 768px) {
+    flex-direction: column;
     padding: 40px 20px;
+  }
+`;
+
+const AnimationBackground = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Ensure it's behind the content */
+  opacity: 1; /* Adjust opacity to make the animation subtle */
+`;
+
+const Content = styled.div`
+  flex: 1;
+  position: relative; /* To layer content above the background animation */
+  z-index: 1; /* Ensure content appears above the animation */
+  padding-right: 20px;
+  color: #333;
+
+  @media (max-width: 768px) {
+    padding-right: 0;
   }
 `;
 
 const Heading = styled.h2`
   font-size: 2.5rem;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: #333;
   font-family: 'Georgia', serif;
 `;
 
-const ContentContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 20px;
-  }
-`;
-
-const ContentBlock = styled.div`
-  flex: 1;
-  font-family: 'Arial', sans-serif;
+const Description = styled.div`
+  font-size: 1.2rem;
   color: #555;
+  font-family: 'Arial', sans-serif;
   line-height: 1.8;
-  background: #fff; /* White background for content blocks */
-  border-radius: 10px; /* Rounded corners */
-  padding: 20px; /* Padding for inner content */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 
   p {
-    font-size: 1.2rem;
+    margin-bottom: 20px;
   }
-`;
-
-const SubHeading = styled.h3`
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 20px;
-  font-family: 'Georgia', serif;
 `;
 
 export default VisionMission;

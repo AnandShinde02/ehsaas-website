@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import Lottie from 'lottie-react';
-import animationData from '../animations/animation1.json'; // Path to your Lottie animation file
+import animationData from '../animations/Animation1.json'; // Path to your Lottie animation file
 
 const AboutUs = () => {
   return (
     <AboutUsContainer id="about">
+      {/* Lottie Animation as Background */}
+      <AnimationBackground>
+        <Lottie animationData={animationData} loop={true} style={{ width: '100%', height: '100%' }} />
+      </AnimationBackground>
+
       <Content>
         <Heading>About Us</Heading>
         <Description>
@@ -22,21 +27,13 @@ const AboutUs = () => {
           </p>
         </Description>
       </Content>
-
-      {/* Lottie Animation */}
-      <AnimationWrapper>
-        <Lottie animationData={animationData} loop={true} style={{ width: '100%', height: '100%' }} />
-      </AnimationWrapper>
-
-      <Image>
-        <img src="/about-image.jpg" alt="Ehsaas about us" />
-      </Image>
     </AboutUsContainer>
   );
 };
 
 // Styled Components
 const AboutUsContainer = styled.section`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,6 +42,7 @@ const AboutUsContainer = styled.section`
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
   margin: 20px; /* Margin around the section */
+  overflow: hidden; /* Ensure the background animation doesn't overflow */
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -52,9 +50,22 @@ const AboutUsContainer = styled.section`
   }
 `;
 
+const AnimationBackground = styled.div`
+  position: absolute;
+  top: -50;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Ensure it's behind the content */
+  opacity: 1; /* Adjust opacity so content is readable */
+`;
+
 const Content = styled.div`
   flex: 1;
+  position: relative; /* To layer content above the background animation */
+  z-index: 1; /* Ensure content appears above the animation */
   padding-right: 20px;
+  color: #333;
 
   @media (max-width: 768px) {
     padding-right: 0;
@@ -76,28 +87,6 @@ const Description = styled.div`
 
   p {
     margin-bottom: 20px;
-  }
-`;
-
-const AnimationWrapper = styled.div`
-  flex: 1;
-  max-width: 300px; /* Set a max width for the animation */
-  margin: 0 20px; /* Optional: Add margin around the animation */
-
-  @media (max-width: 768px) {
-    margin: 20px 0;
-    max-width: 100%; /* Make sure it adjusts on smaller screens */
-  }
-`;
-
-const Image = styled.div`
-  flex: 1;
-
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px; /* Rounded corners for image */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
   }
 `;
 
