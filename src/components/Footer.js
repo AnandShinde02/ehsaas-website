@@ -38,7 +38,7 @@ const Footer = () => {
         </ContactSection>
       </FooterContent>
       <FooterBottom>
-        <p>Made With  By Badbunny and © 2024 EHSAAS. All Rights Reserved.</p>
+        <p>Made With ❤️ By Badbunny and © 2024 EHSAAS. All Rights Reserved.</p>
       </FooterBottom>
     </FooterContainer>
   );

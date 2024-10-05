@@ -22,6 +22,9 @@ const Gallery = () => {
       <GalleryGrid>
         {galleryImages.map((image, index) => (
           <ImageCard key={index}>
+            {/* <ImageOverlay>
+              <OverlayText>Image {index + 1}</OverlayText>
+            </ImageOverlay> */}
             <img src={image} alt={`Gallery ${index + 1}`} />
           </ImageCard>
         ))}
@@ -35,6 +38,7 @@ const Gallery = () => {
 const GallerySection = styled.section`
   padding: 60px 100px;
   background-color: #f9f9f9;
+
   @media (max-width: 768px) {
     padding: 40px 20px;
   }
@@ -50,28 +54,60 @@ const GalleryHeading = styled.h2`
 
 const GalleryGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted min width for larger rectangular cards */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  justify-items: center;
-  align-items: center;
 `;
 
 const ImageCard = styled.div`
+  position: relative;
   width: 100%;
-  height: 200px; /* Set height for rectangular shape */
+  height: 200px; /* Fixed height for uniformity */
   overflow: hidden;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05) rotate(2deg); /* Scale and tilt effect on hover */
+  }
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the full card while keeping aspect ratio */
-    border-radius: 10px; /* Keeps the rounded corners */
+    object-fit: cover; /* Ensures the image covers the full card while maintaining aspect ratio */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1); /* Zoom effect on hover */
+    }
   }
 `;
+
+// const ImageOverlay = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   opacity: 0; /* Initially hidden */
+//   transition: opacity 0.3s ease;
+
+//   ${ImageCard}:hover & {
+//     opacity: 1; /* Show overlay on hover */
+//   }
+// `;
+
+// const OverlayText = styled.span`
+//   color: white;
+//   font-size: 1.5rem;
+//   font-weight: bold;
+//   text-align: center;
+//   transition: opacity 0.3s ease; /* Optional for smooth transition */
+// `;
 
 export default Gallery;
