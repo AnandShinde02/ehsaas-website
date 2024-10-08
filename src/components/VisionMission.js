@@ -1,54 +1,64 @@
 import React from 'react';
 import styled from 'styled-components';
 import Lottie from 'lottie-react';
-import animationData from '../animations/Animation1.json'; // Path to your Lottie animation file for Vision & Mission
+import animationData from '../animations/Animation1.json';
 
 const VisionMission = () => {
   return (
-    <VisionMissionContainer id="vision-mission">
-      {/* Lottie Animation as Background */}
+    <VisionMissionContainer id="vision">
       <AnimationBackground>
-        <Lottie animationData={animationData} loop={true} style={{ width: '100%', height: '100%', transform: 'rotate(180deg)' }} />
+        <Lottie 
+          animationData={animationData} 
+          loop={true} 
+          style={{ 
+            width: '100%', 
+            height: '100%', 
+            transform: 'rotate(180deg)' 
+          }} 
+        />
       </AnimationBackground>
 
-      <CardsContainer>
-        {/* Vision Card */}
-        <Card>
-          <CardHeading>Vision</CardHeading>
-          <CardContent>
-            <p>
-              At EHSAAS, our vision is to create a society where every child, regardless of their physical or intellectual challenges, has the opportunity to lead a meaningful life.
-            </p>
-          </CardContent>
-        </Card>
+      <ContentWrapper>
+        <SectionTitle>Vision & Mission</SectionTitle>
+        
+        <CardsContainer>
+          <Card>
+            <CardHeading>Vision</CardHeading>
+            <CardContent>
+              <p>
+                At EHSAAS, our vision is to create a society where every child, 
+                regardless of their physical or intellectual challenges, has the 
+                opportunity to lead a meaningful life.
+              </p>
+            </CardContent>
+          </Card>
 
-        {/* Mission Card */}
-        <Card>
-          <CardHeading>Mission</CardHeading>
-          <CardContent>
-            <p>
-              Our mission is to provide care, education, and support to underprivileged and intellectually challenged children, helping them realize their full potential and integrate into society as valued members.
-            </p>
-          </CardContent>
-        </Card>
-      </CardsContainer>
+          <Card>
+            <CardHeading>Mission</CardHeading>
+            <CardContent>
+              <p>
+                Our mission is to provide care, education, and support to 
+                underprivileged and intellectually challenged children, helping 
+                them realize their full potential and integrate into society 
+                as valued members.
+              </p>
+            </CardContent>
+          </Card>
+        </CardsContainer>
+      </ContentWrapper>
     </VisionMissionContainer>
   );
 };
 
-// Styled Components
 const VisionMissionContainer = styled.section`
   position: relative;
-  padding: 60px 100px;
-  background: linear-gradient(135deg, #E3D5F1, #A7C7E7); /* Gradient Background like AboutUs */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
-  margin: 20px; /* Margin around the section */
-  overflow: hidden; /* Ensure the background animation doesn't overflow */
-
-  @media (max-width: 768px) {
-    padding: 40px 20px;
-  }
+  padding: clamp(30px, 5vw, 60px) clamp(20px, 5vw, 100px);
+  background: linear-gradient(135deg, #E3D5F1, #A7C7E7);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin: clamp(10px, 2vw, 20px);
+  overflow: hidden;
+  min-height: 60vh;
 `;
 
 const AnimationBackground = styled.div`
@@ -57,47 +67,89 @@ const AnimationBackground = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Ensure it's behind the content */
-  opacity: 1; /* Adjust opacity to make the animation subtle */
+  z-index: 0;
+  opacity: 0.3;
+
+  > div {
+    width: 100% !important;
+    height: 100% !important;
+  }
+`;
+
+const ContentWrapper = styled.div`
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+`;
+
+const SectionTitle = styled.h2`
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: #333;
+  text-align: center;
+  margin-bottom: clamp(20px, 4vw, 40px);
+  font-family: 'Georgia', serif;
 `;
 
 const CardsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  position: relative; /* To layer content above the background animation */
-  z-index: 1; /* Ensure content appears above the animation */
-  gap: 20px;
-
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: clamp(20px, 4vw, 40px);
+  position: relative;
+  z-index: 1;
+  
   @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 0;
+    grid-template-columns: 1fr;
   }
 `;
 
 const Card = styled.div`
-  flex: 1;
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent for glass effect */
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
-  padding: 20px;
-  backdrop-filter: blur(10px); /* Blurred background for glassmorphism effect */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
-  color: #333;
+  padding: clamp(20px, 3vw, 30px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  /* Fallback for browsers that don't support backdrop-filter */
+  @supports not (backdrop-filter: blur(10px)) {
+    background: rgba(255, 255, 255, 0.9);
+  }
 `;
 
 const CardHeading = styled.h3`
-  font-size: 1.8rem;
-  margin-bottom: 15px;
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  margin-bottom: clamp(10px, 2vw, 15px);
   color: #333;
   font-family: 'Georgia', serif;
+  position: relative;
+  
+  &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #F59E4C;
+    margin-top: 10px;
+    border-radius: 2px;
+  }
 `;
 
 const CardContent = styled.div`
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: #555;
   line-height: 1.8;
 
   p {
-    margin-bottom: 20px;
+    margin-bottom: clamp(15px, 3vw, 20px);
   }
 `;
 

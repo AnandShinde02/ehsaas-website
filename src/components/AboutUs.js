@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Lottie from 'lottie-react';
-import animationData from '../animations/Animation1.json'; // Path to your Lottie animation file
+// Make sure your animation JSON file path is correct
+import animationData from '../animations/Animation1.json';
 
 const AboutUs = () => {
   return (
     <AboutUsContainer id="about">
-      {/* Lottie Animation as Background */}
       <AnimationBackground>
-        <Lottie animationData={animationData} loop={true} style={{ width: '100%', height: '100%' }} />
+        <Lottie animationData={animationData} loop={true} />
       </AnimationBackground>
 
       <Content>
@@ -17,13 +17,11 @@ const AboutUs = () => {
           <p>
             EHSAAS is a Non-Governmental Organization (NGO) based on the philosophy of serving society.
             We believe that "Every child comes to earth with innumerable possibilities" and they are the
-            hopes and founders of tomorrow. Ehsaas is dedicated to uplifting underprivileged and intellectually
-            challenged children, providing them with the care and education they deserve.
+            hopes and founders of tomorrow.
           </p>
           <p>
             Founded in 2008, our mission is to create a support system for these children, helping them develop
-            their skills and become integral members of society. Through continuous education and nurturing, we 
-            aim to provide them with a future full of hope and opportunity.
+            their skills and become integral members of society.
           </p>
         </Description>
       </Content>
@@ -31,62 +29,67 @@ const AboutUs = () => {
   );
 };
 
-// Styled Components
 const AboutUsContainer = styled.section`
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 60px 100px;
-  background: linear-gradient(135deg, #A7C7E7, #E3D5F1); /* Gradient Background */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
-  margin: 20px; /* Margin around the section */
-  overflow: hidden; /* Ensure the background animation doesn't overflow */
+  padding: clamp(20px, 5vw, 60px);
+  background: linear-gradient(135deg, #A7C7E7, #E3D5F1);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin: clamp(10px, 2vw, 20px);
+  overflow: hidden;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 40px 20px;
   }
 `;
 
 const AnimationBackground = styled.div`
   position: absolute;
-  top: -50;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Ensure it's behind the content */
-  opacity: 1; /* Adjust opacity so content is readable */
+  z-index: 0;
+  opacity: 0.3;
+
+  > div {
+    width: 100% !important;
+    height: 100% !important;
+  }
 `;
 
 const Content = styled.div`
   flex: 1;
-  position: relative; /* To layer content above the background animation */
-  z-index: 1; /* Ensure content appears above the animation */
-  padding-right: 20px;
+  position: relative;
+  z-index: 1;
+  padding: clamp(10px, 3vw, 20px);
   color: #333;
+  max-width: 800px;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
-    padding-right: 0;
+    text-align: center;
   }
 `;
 
 const Heading = styled.h2`
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  margin-bottom: clamp(15px, 3vw, 20px);
   color: #333;
   font-family: 'Georgia', serif;
 `;
 
 const Description = styled.div`
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   color: #555;
   font-family: 'Arial', sans-serif;
   line-height: 1.8;
 
   p {
-    margin-bottom: 20px;
+    margin-bottom: clamp(15px, 3vw, 20px);
   }
 `;
 
