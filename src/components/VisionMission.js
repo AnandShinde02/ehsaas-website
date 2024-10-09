@@ -66,9 +66,9 @@ const AnimationBackground = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 70%;
   z-index: 0;
-  opacity: 0.3;
+  opacity: 5;
 
   > div {
     width: 100% !important;

@@ -142,7 +142,7 @@ const NavBar = styled.nav`
 
 const NavLink = styled.a`
   text-decoration: none;
-  color: #333333;
+  color: #ffffff;
   margin: 0 clamp(10px, 2vw, 20px);
   font-size: clamp(16px, 2.5vw, 18px);
   font-family: 'Arial', sans-serif;

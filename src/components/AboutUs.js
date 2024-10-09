@@ -34,11 +34,11 @@ const AboutUsContainer = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: clamp(20px, 5vw, 60px);
+  padding: clamp(10px, 5vw, 40px);
   background: linear-gradient(135deg, #A7C7E7, #E3D5F1);
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  margin: clamp(10px, 2vw, 20px);
+  margin: clamp(5px, 2vw, 20px);
   overflow: hidden;
 
   @media (max-width: 768px) {
@@ -53,7 +53,7 @@ const AnimationBackground = styled.div`
   width: 100%;
   height: 100%;
   z-index: 0;
-  opacity: 0.3;
+  opacity: 5;
 
   > div {
     width: 100% !important;

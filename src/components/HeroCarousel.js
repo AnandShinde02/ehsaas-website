@@ -20,7 +20,7 @@ const HeroCarousel = () => {
     arrows: false,
     fade: true,
     beforeChange: (current, next) => {
-      // Pause all videos except the next one
+      //Pause all videos except the next one
       const videos = document.querySelectorAll('.hero-video');
       videos.forEach((video, index) => {
         if (index === next) {

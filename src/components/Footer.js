@@ -1,3 +1,5 @@
+// Footer.js
+
 import React from 'react';
 import styled from 'styled-components';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
@@ -22,7 +24,7 @@ const Footer = () => {
         <ContactSection>
           <h3>Contact Us</h3>
           <p>Near B.P Petrol Pump, Valase, Maharashtra 415519</p>
-          <p>Email: info@ehsaas.org</p>
+          <p>Email: <a href="mailto:info@ehsaas.org" style={{ color: 'white' }}>info@ehsaas.org</a></p>
           <p>Phone: +91 1234567890</p>
           <SocialIcons>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
@@ -60,6 +62,7 @@ const FooterContent = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: flex-start; /* Align items to the top */
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -70,6 +73,7 @@ const FooterContent = styled.div`
 
 const LogoSection = styled.div`
   flex: 1;
+  min-width: 220px; /* Minimum width for smaller screens */
 
   img {
     width: 300px;
@@ -84,6 +88,7 @@ const LogoSection = styled.div`
 
 const LinksSection = styled.div`
   flex: 1;
+  min-width: 220px; /* Minimum width for smaller screens */
 
   h3 {
     margin-bottom: 15px;
@@ -110,6 +115,7 @@ const FooterLink = styled.a`
 
 const ContactSection = styled.div`
   flex: 1;
+  min-width: 220px; /* Minimum width for smaller screens */
 
   h3 {
     margin-bottom: 15px;
