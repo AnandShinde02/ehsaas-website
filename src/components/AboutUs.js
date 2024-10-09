@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Lottie from 'lottie-react';
-// Make sure your animation JSON file path is correct
+// Ensure the path to your animation JSON file is correct
 import animationData from '../animations/Animation1.json';
 
 const AboutUs = () => {
@@ -15,13 +15,12 @@ const AboutUs = () => {
         <Heading>About Us</Heading>
         <Description>
           <p>
-            EHSAAS is a Non-Governmental Organization (NGO) based on the philosophy of serving society.
-            We believe that "Every child comes to earth with innumerable possibilities" and they are the
-            hopes and founders of tomorrow.
+            EHSAAS is a Non-Governmental Organization (NGO) based on the philosophy of serving society. We believe that
+            "Every child comes to earth with innumerable possibilities" and they are the hopes and founders of tomorrow.
           </p>
           <p>
-            Founded in 2008, our mission is to create a support system for these children, helping them develop
-            their skills and become integral members of society.
+            Founded in 2008, our mission is to create a support system for these children, helping them develop their
+            skills and become integral members of society.
           </p>
         </Description>
       </Content>
@@ -29,13 +28,15 @@ const AboutUs = () => {
   );
 };
 
+// Styled Components
+
 const AboutUsContainer = styled.section`
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: clamp(10px, 5vw, 40px);
-  background: linear-gradient(135deg, #A7C7E7, #E3D5F1);
+  background: linear-gradient(135deg, #a7c7e7, #e3d5f1);
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   margin: clamp(5px, 2vw, 20px);
@@ -53,11 +54,17 @@ const AnimationBackground = styled.div`
   width: 100%;
   height: 100%;
   z-index: 0;
-  opacity: 5;
+  opacity: 1; /* Visible on larger screens */
 
   > div {
     width: 100% !important;
     height: 100% !important;
+  }
+
+  /* Hide animation on small screens */
+  @media (max-width: 768px) {
+    opacity: 0; /* Hide the animation */
+    pointer-events: none; /* Ensure it's not interactable */
   }
 `;
 
